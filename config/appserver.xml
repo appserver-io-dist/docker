@@ -38,7 +38,7 @@
                     name="localhost"
                     appBase="/webapps"
                     serverAdmin="info@appserver.io"
-                    serverSoftware="appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15" />
+                    serverSoftware="appserver/1.0.0-44 (darwin) PHP/5.5.21" />
 
             <servers>
 
@@ -53,7 +53,7 @@
 
                     <params>
                         <param name="admin" type="string">info@appserver.io</param>
-                        <param name="software" type="string">appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15</param>
+                        <param name="software" type="string">appserver/1.0.0-44 (darwin) PHP/5.5.21</param>
                         <param name="transport" type="string">tcp</param>
                         <param name="address" type="string">127.0.0.1</param>
                         <param name="port" type="integer">8585</param>
@@ -120,7 +120,7 @@
 
                     <params>
                         <param name="admin" type="string">info@appserver.io</param>
-                        <param name="software" type="string">appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15</param>
+                        <param name="software" type="string">appserver/1.0.0-44 (darwin) PHP/5.5.21</param>
                         <param name="transport" type="string">tcp</param>
                         <param name="address" type="string">127.0.0.1</param>
                         <param name="port" type="integer">8587</param>
@@ -182,10 +182,10 @@
                         loggerName="System">
                     <params>
                         <param name="admin" type="string">info@appserver.io</param>
-                        <param name="software" type="string">appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15</param>
+                        <param name="software" type="string">appserver/1.0.0-44 (darwin) PHP/5.5.21</param>
                         <param name="transport" type="string">tcp</param>
                         <param name="address" type="string">0.0.0.0</param>
-                        <param name="port" type="integer">9080</param>
+                        <param name="port" type="integer">80</param>
                         <param name="workerNumber" type="integer">64</param>
                         <param name="workerAcceptMin" type="integer">3</param>
                         <param name="workerAcceptMax" type="integer">8</param>
@@ -194,6 +194,7 @@
                         <param name="keepAliveMax" type="integer">64</param>
                         <param name="keepAliveTimeout" type="integer">5</param>
                         <param name="errorsPageTemplatePath" type="string">var/www/errors/error.phtml</param>
+                        <param name="welcomePageTemplatePath" type="string">var/www/errors/welcome.phtml</param>
                     </params>
 
                     <environmentVariables>
@@ -282,12 +283,12 @@
                         loggerName="System">
                     <params>
                         <param name="admin" type="string">info@appserver.io</param>
-                        <param name="software" type="string">appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15</param>
+                        <param name="software" type="string">appserver/1.0.0-44 (darwin) PHP/5.5.21</param>
                         <param name="workerNumber" type="integer">64</param>
                         <param name="workerAcceptMin" type="integer">3</param>
                         <param name="workerAcceptMax" type="integer">8</param>
                         <param name="transport" type="string">ssl</param>
-                        <param name="address" type="string">127.0.0.1</param>
+                        <param name="address" type="string">0.0.0.0</param>
                         <param name="port" type="integer">9443</param>
                         <param name="certPath" type="string">etc/appserver/server.pem</param>
                         <param name="passphrase" type="string"></param>
@@ -296,6 +297,7 @@
                         <param name="keepAliveMax" type="integer">64</param>
                         <param name="keepAliveTimeout" type="integer">5</param>
                         <param name="errorsPageTemplatePath" type="string">var/www/errors/error.phtml</param>
+                        <param name="welcomePageTemplatePath" type="string">var/www/errors/welcome.phtml</param>
                     </params>
 
                     <environmentVariables>
@@ -373,72 +375,6 @@
                     </fileHandlers>
 
                 </server>
-
-                <!--
-                 ! The following servers are in a development state and are not production ready,
-                 ! uncomment them on your own risk.
-                 -->
-
-                <!--
-                <server
-                        name="web-socket"
-                        type="\AppserverIo\Appserver\WebSocketServer\Servers\AsyncServer"
-                        socket="\AppserverIo\Appserver\WebSocketServer\Sockets\AsyncSocket"
-                        serverContext="\AppserverIo\Server\Contexts\ServerContext"
-                        requestContext="\AppserverIo\Server\Contexts\RequestContext"
-                        loggerName="System">
-                    <params>
-                        <param name="admin" type="string">info@appserver.io</param>
-                        <param name="software" type="string">appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15</param>
-                        <param name="transport" type="string">tcp</param>
-                        <param name="address" type="string">127.0.0.1</param>
-                        <param name="port" type="integer">8589</param>
-                        <param name="documentRoot" type="string">webapps</param>
-                        <param name="errorsPageTemplatePath" type="string">var/www/errors/error.phtml</param>
-                    </params>
-
-                    <environmentVariables>
-                        <environmentVariable condition="" definition="LOGGER_ACCESS=Access" />
-                    </environmentVariables>
-
-                    <connectionHandlers>
-                        <connectionHandler type="\AppserverIo\Appserver\WebSocketProtocol\WebSocketConnectionHandler" />
-                    </connectionHandlers>
-
-                </server>
-
-                <server
-                        name="memcached"
-                        type="\AppserverIo\Server\Servers\MultiThreadedServer"
-                        worker="\AppserverIo\Server\Workers\ThreadWorker"
-                        socket="\AppserverIo\Server\Sockets\StreamSocket"
-                        serverContext="\AppserverIo\Server\Contexts\ServerContext"
-                        requestContext="\AppserverIo\Server\Contexts\RequestContext"
-                        loggerName="System">
-
-                    <params>
-                        <param name="admin" type="string">info@appserver.io</param>
-                        <param name="software" type="string">appserver/1.0.0-rc2.33 (darwin) PHP/5.3.15</param>
-                        <param name="transport" type="string">tcp</param>
-                        <param name="address" type="string">127.0.0.1</param>
-                        <param name="port" type="integer">11210</param>
-                        <param name="workerNumber" type="integer">8</param>
-                        <param name="workerAcceptMin" type="integer">3</param>
-                        <param name="workerAcceptMax" type="integer">8</param>
-                        <param name="keepAliveMax" type="integer">64</param>
-                        <param name="keepAliveTimeout" type="integer">16</param>
-                    </params>
-
-                    <environmentVariables>
-                        <environmentVariable condition="" definition="LOGGER_ACCESS=Access" />
-                    </environmentVariables>
-
-                    <connectionHandlers>
-                        <connectionHandler type="\AppserverIo\Appserver\MemcacheProtocol\MemcacheConnectionHandler" />
-                    </connectionHandlers>
-
-                </server>
-                -->
 
             </servers>
         </container>
