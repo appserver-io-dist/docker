@@ -185,7 +185,7 @@
                         <param name="software" type="string">appserver/1.0.0-44 (darwin) PHP/5.5.21</param>
                         <param name="transport" type="string">tcp</param>
                         <param name="address" type="string">0.0.0.0</param>
-                        <param name="port" type="integer">80</param>
+                        <param name="port" type="integer">9080</param>
                         <param name="workerNumber" type="integer">64</param>
                         <param name="workerAcceptMin" type="integer">3</param>
                         <param name="workerAcceptMax" type="integer">8</param>
