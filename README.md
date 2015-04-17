@@ -1,7 +1,7 @@
 #Docker Container
 
 ## Introduction
-Dockerfile to build appserver.io.
+Dockerfile to build the appserver.io appserver.
 
 ## Requirements
 - Docker version >= v1.3
