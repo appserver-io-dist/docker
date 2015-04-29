@@ -8,6 +8,10 @@ Dockerfile to build the appserver.io appserver.
 - GNU Linux Kernel version >= 3.8 on the host machine
 
 ## Issues
+In order to bundle our efforts we would like to collect all issues regarding this package in [the main project repository's issue tracker](https://github.com/appserver-io/appserver/issues).
+Please reference the originating repository as the first element of the issue title e.g.:
+`[appserver-io/<ORIGINATING_REPO>] A issue I am having`
+
 For ubuntu users I suggest installing docker using docker's own package repository since the version of docker packaged in the ubuntu repositories are a little dated.
 
 	sudo apt-get purge docker.io
