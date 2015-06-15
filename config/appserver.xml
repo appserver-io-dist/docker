@@ -10,7 +10,7 @@
     <!--
      ! You might add optional configuration for implicitly configured components here
      !
-     ! https://github.com/appserver-io/appserver/wiki/13.-Configuration#optional-configuration
+     ! http://appserver.io/get-started/documentation/configuration.html#optional-configuration
      -->
 
     <containers>
