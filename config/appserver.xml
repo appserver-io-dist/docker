@@ -34,11 +34,7 @@
 
             <deployment type="AppserverIo\Appserver\Core\GenericDeployment" />
 
-            <host
-                    name="localhost"
-                    appBase="/webapps"
-                    serverAdmin="info@appserver.io"
-                    serverSoftware="appserver/1.0.0-44 (darwin) PHP/5.5.21" />
+            <host name="localhost" appBase="/webapps" />
 
             <servers>
 
