@@ -12,7 +12,7 @@ MAINTAINER Johann Zelger <jz@appserver.io>
 
 # define versions
 ENV APPSERVER_RUNTIME_BUILD_VERSION 1.1.0-31
-ENV APPSERVER_SOURCE_VERSION 1.1.0-38
+ENV APPSERVER_SOURCE_VERSION 1.1.0
 
 # install packages
 RUN apt-get update && \
